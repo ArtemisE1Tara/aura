@@ -1,16 +1,7 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { auth } from '@clerk/nextjs/server';
-import { redirect } from 'next/navigation';
 
-export default async function Home() {
-  // Redirect authenticated users to dashboard
-  const { userId } = await auth();
-  
-  if (userId) {
-    redirect('/dashboard');
-  }
-
+export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-stone-50 to-stone-100">
       {/* Header */}
